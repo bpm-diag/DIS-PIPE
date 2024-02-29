@@ -188,7 +188,7 @@ def copy_folder(source_folder, destination_folder):
 
 #added by SimoneONE
 @app.route('/',methods=["POST", "GET"])
-@oidc.require_login
+#@oidc.require_login
 def indice():
     """ 
     Example for protected endpoint that extracts private information
@@ -196,18 +196,20 @@ def indice():
     to access a backend service.
     """
     
-    info = oidc.user_getinfo(['preferred_username', 'sub'])
+    #info = oidc.user_getinfo(['preferred_username', 'sub'])
 
-    username = info.get('preferred_username')
-    user_id = info.get('sub')
-    greeting = "Hello %s" % username
+    #username = info.get('preferred_username')
+    username = "testuser"
+    #user_id = info.get('sub')
+    #greeting = "Hello %s" % username
     #access_token= ""
     
 
-    if user_id in oidc.credentials_store:
-            from oauth2client.client import OAuth2Credentials
-            session["access_token"] = OAuth2Credentials.from_json(oidc.credentials_store[user_id]).access_token
-            session["refresh_token"] = OAuth2Credentials.from_json(oidc.credentials_store[user_id]).refresh_token
+    #if user_id in oidc.credentials_store:
+    if True:
+            #from oauth2client.client import OAuth2Credentials
+            #session["access_token"] = OAuth2Credentials.from_json(oidc.credentials_store[user_id]).access_token
+            #session["refresh_token"] = OAuth2Credentials.from_json(oidc.credentials_store[user_id]).refresh_token
             #print(greeting, user_id, session["access_token"])
             session.permanent = True
             session["user"] = username
@@ -269,7 +271,7 @@ def indice():
 
 #added by SimoneONE
 @app.route('/logout')
-@oidc.require_login
+# @oidc.require_login
 def logout():
     session.pop("user", None)
     session.pop("log_name", None)
@@ -345,7 +347,7 @@ def home(file):
         nameupload = session["log_name"]     ) )
 
 @app.route('/index')
-@oidc.require_login
+# @oidc.require_login
 def index():
     session.permanent = True
     '''
@@ -599,7 +601,7 @@ def upload_file():
     #return redirect("http://127.0.0.1:8080", code=200)    
 
 @app.route('/indexSeg')
-@oidc.require_login
+# @oidc.require_login
 def indexSeg():
     session.permanent = True
     '''
@@ -983,7 +985,7 @@ def saveProject():
     return "work_done"
 
 @app.route('/renameProject/<newname>', methods=['POST'])
-@oidc.require_login
+# @oidc.require_login
 def renameProject(newname):
     headers = {
         'Authorization': session["access_token"]
@@ -1034,7 +1036,7 @@ def renameProject(newname):
     return session["log_name"]
 
 @app.route('/sendDsl')
-@oidc.require_login
+# @oidc.require_login
 def sendDsl():
 
     headers = {
@@ -1078,7 +1080,7 @@ def process_string(input_string):
             
 
 @app.route('/getDslStructure')
-@oidc.require_login
+#@oidc.require_login
 def getDslStructure():
 
     dslName = request.args.get('dslName')
@@ -1235,7 +1237,7 @@ def getDslStructure():
 
 
 @app.route('/getDslName')
-@oidc.require_login
+# @oidc.require_login
 def getDslName():
 
     headers = {
