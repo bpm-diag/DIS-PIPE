@@ -98,7 +98,7 @@ app.config["DEBUG"] = True
 app.config['UPLOAD_FOLDER'] = LOGS_FOLDER
 app.config['SESSION_TYPE'] = 'filesystem'
 
-
+'''
 f = open('client_secrets.json')
 client_secret_json = json.load(f)
 secret_key_client=client_secret_json['web']['client_secret']
@@ -106,6 +106,7 @@ secret_server_url=client_secret_json['web']['server_url']
 secret_client_id=client_secret_json['web']['client_id']
 secret_realm_name=client_secret_json['web']['realm_name']
 f.close()
+
 
 app.config.update({
     'SECRET_KEY': secret_key_client,
@@ -120,7 +121,7 @@ app.config.update({
     'OIDC_INTROSPECTION_AUTH_METHOD': 'client_secret_post'
 })
 oidc = OpenIDConnect(app)
-
+'''
 app.app_context().push()
 #Session(app)
 app.secret_key = "hello"
@@ -200,6 +201,7 @@ def indice():
 
     #username = info.get('preferred_username')
     username = "testuser"
+    #username = "utente1"
     #user_id = info.get('sub')
     #greeting = "Hello %s" % username
     #access_token= ""
@@ -295,11 +297,13 @@ def logout():
     session.pop("segmentator",None)
     session.pop("NODOsegmen",None)
     
+    '''
     keycloak_openid = KeycloakOpenID(server_url=secret_server_url,
                                     client_id=secret_client_id,
                                     realm_name=secret_realm_name,
                                     client_secret_key=secret_key_client)
-
+    
+                                    
     try:
         keycloak_openid.logout(session["refresh_token"])
     except:
@@ -310,7 +314,8 @@ def logout():
     
     session.pop("access_token", None)
     session.pop("refresh_token", None)
-    
+    '''
+
     return render_template("logout.html")
 
 

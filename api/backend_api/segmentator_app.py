@@ -159,6 +159,18 @@ def copy_folder(source_folder, destination_folder):
         print(f"Folder copy failed: {e}")
 
 
+def process_string(input_string):
+    split_string = input_string.split("api/", 1)
+    if len(split_string) > 1:
+        result = split_string[1]
+        return result
+    else:
+        if(input_string.startswith("/storage")):
+            return input_string[1:]
+        else:
+            return input_string
+
+
 
 @app_Segmentator.route('/startSegmentator', methods=['POST'])
 def startSegmentator():
