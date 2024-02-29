@@ -1,3 +1,38 @@
+function importDsl(){
+
+    var fileInput = document.getElementById('fileDslInput');
+    var file = fileInput.files[0];
+
+    if (file) {
+        var formData = new FormData();
+        formData.append('file', file);
+
+        fetch('/uploadDslFile', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                response.json().then(data => {
+                    console.log(data["risposta"]); // Print response JSON to console
+                    getDslbyNameListenerDEMO(data["risposta"])
+                });
+            
+            } else {
+                alert('Error uploading file!');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    } else {
+        alert('Please select a file.');
+    }
+
+}
+
+
+
 function getNameDsl(){
 
     //console.log("Function: getNameDsl()")
@@ -182,6 +217,53 @@ function getDslbyNameListener() {
         console.log("Function: getDslbyNameListener()");
           
         var response=this.responseText.split("£")
+        
+        tr_name=response[4]
+        console.log(tr_name)
+        log_name=response[3]
+        console.log(log_name)
+        nuovo_grafo=response[5]
+
+        document.getElementById("new_digraph").innerHTML = nuovo_grafo;
+        document.getElementById("stringPetriNet").innerHTML = response[0];
+
+        petri_sample = document.getElementById("stringPetriNet").innerHTML;
+        petri_sample = petri_sample.replace(/&#34;/g, '"');
+        petri_sample = petri_sample.replace(/&gt;/g, ">");
+        petri_sample = petri_sample.replace(/&lt;/g, "<");
+        petri_sample = petri_sample.replace(/●/g, " ");
+        petri_sample = petri_sample.replace(/■/g, " ");
+
+        // Resolve the promise with the result
+        resolve({ tr_name, log_name }); 
+    });
+    p1.then(
+        (value) => {
+            console.log(value); // Success!
+            const { tr_name, log_name } = value
+            addTransitionName(tr_name, log_name);
+        },
+        (reason) => {
+          console.error(reason); // Error!
+        },
+      ); 
+}
+
+
+function getDslbyNameListenerDEMO(parametro) {
+
+    
+    const p1 = new Promise((resolve, reject) => {
+
+    
+        document.getElementById("formConformanceChecking0").style.display = "none";
+        document.getElementById("formConformanceChecking").style.display = "block";
+        document.getElementById("formConformanceChecking2").style.display = "none";
+        document.getElementById("map2-content").style.display = "none";
+
+        console.log("Function: ()");
+          
+        var response=parametro.split("£")
         
         tr_name=response[4]
         console.log(tr_name)

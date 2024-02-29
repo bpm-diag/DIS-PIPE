@@ -444,7 +444,7 @@ function checkRefresh(value){
 					<br />
 					<!--<button id="get_dsl" class="menu_button" type="button" onclick="getNameDsl()">Get DSL from DEF-PIPE</button>
 					<br />-->
-					<button id="send_dsl" class="menu_button" type="button" onclick="sendDslRequest('fine')">Send DSL to DEF-PIPE</button>
+					<button style="visibility: hidden;" id="send_dsl" class="menu_button" type="button" onclick="sendDslRequest('fine')">Send DSL to DEF-PIPE</button>
 					<br />
 					
 					<button style="display: none" id="open_project" class="menu_button" type="button" onclick="openProject()">Open Project Script</button>
@@ -1312,15 +1312,18 @@ function checkRefresh(value){
 									<br>
 									
 									<div style="border-spacing: 0 15px;">
-										Choose a DSL from DEF-PIPE repository
+										Import a DSL 
+										<br>
+										<input type="file" id="fileDslInput" /> 
 									</div>
 	
 									
 									<div style="text-align:center">
 										<br>
 										<button class="conf_check_button" type="button" style="font-size: 16px; display: none;" onclick="petriNetComputeInternal()">Internal</button>
-										<button class="conf_check_button" type="button" style="font-size: 16px;" onclick="getNameDsl()">Select ...</button>
-										
+										<!-- <button class="conf_check_button" type="button" style="font-size: 16px;" onclick="getNameDsl()">Select ...</button> -->
+										<button class="conf_check_button" type="button" style="font-size: 16px;" onclick="importDsl()">Import ...</button>
+
 									</div>
 								
 								</div>

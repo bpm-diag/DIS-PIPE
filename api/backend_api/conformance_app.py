@@ -59,6 +59,7 @@ sys.path.insert(3, 'backend_api')
 from databaseFunctions import *
 from utilities import *
 from rule import *
+from utils import *
 
 from backend_classes import *
 
@@ -625,6 +626,140 @@ def process_string_jar(input_string):
         return relevant_part
     else :
         return input_string
+    
+
+
+@app_conformance.route('/uploadDslFile', methods=['POST'])
+def uploadDslFile():
+    if 'file' not in request.files:
+        return 'No file part'
+
+    file = request.files['file']
+
+    if file.filename == '':
+        return 'No selected file'
+
+    # You can save the file to your server or process it as needed
+    # For example, save it to a folder
+    #file.save('uploaded_files/' + file.filename)
+
+    # Read the file content
+    file_content = file.read().decode('utf-8')
+    # Print the file content
+    print(file_content)
+
+    try:
+        new_xes=fromDSLtoXES(file_content)
+    except Exception as e:
+        print("pippobaudo")
+        print(e)
+        return(str("error"))
+     
+    ######
+    
+    dfg=session["dfg"]
+
+    dataframe1=pd.DataFrame(session["log"])
+    log = pm4py.convert_to_event_log(dataframe1)
+
+    activities = None
+    activities = pm4py.get_event_attribute_values(log, "concept:name")
+    dfg_f=session["dfg_f"]
+
+    if(dfg_f!=None):
+        dfg_conf =dfg_f
+    else:
+        dfg_conf = dfg
+
+    #Print the current working directory
+    working_dir=os.getcwd()
+    #global backup_dir
+    
+    session["backup_dir"]=working_dir
+    print("Current working directory: {0}".format(os.getcwd()))
+    # os.chdir(working_dir+'/jar')
+    
+
+    # os.system("java -jar traceAligner.jar align d31.pnml d31.xes cost_file 10 40 SYMBA false")
+    # subprocess.call(['bash', './run_SYMBA_all'])
+    os.chdir(working_dir)
+    
+    
+    ######
+
+
+    
+    path=process_string(session["directory_getdsl"][1:]+"/importedpipeline"+".xes")
+    
+    new_xes_log = xes_importer.apply(path)
+
+    #dfg=session["dfg"]
+    #session["dfg"]=dfg
+
+    new_dfg, new_start_activities, new_end_activities = pm4py.discover_dfg(new_xes_log)
+    new_parameters = dfg_visualization.Variants.FREQUENCY.value.Parameters
+    new_gviz_freq = dfg_visualization.apply(new_dfg, log=new_xes_log, variant=dfg_visualization.Variants.FREQUENCY,
+                                            parameters={new_parameters.FORMAT: "svg", new_parameters.START_ACTIVITIES: new_start_activities,
+                                                new_parameters.END_ACTIVITIES: new_end_activities})
+
+    new_grafo_frequency=(str(new_gviz_freq))
+
+
+
+
+    parameters = dfg_visualization.Variants.FREQUENCY.value.Parameters
+    static_event_stream = log_converter.apply(new_xes_log, variant=log_converter.Variants.TO_EVENT_STREAM)
+    tree = inductive_miner.apply_tree(new_xes_log, variant=inductive_miner.Variants.IMf)
+    net, im, fm = pt_converter.apply(tree)
+
+    gviz = pn_visualizer.apply(net, im, fm)
+    # pn_visualizer.view(gviz)
+    places = net.places
+    transitions = net.transitions
+    arcs = net.arcs
+    trst=[]
+
+
+    for tr in transitions:
+        trst.append([str(tr.name), str(tr.label)])
+
+
+    print(session["marking_path"])
+    print(session["cost_file_path"])
+
+    pnml_new_path=process_string(session["directory_net_pnml"][1:]+'/petri_final.pnml')
+    pnml_exporter.apply(net, im, pnml_new_path, final_marking=fm)
+    
+    with open(session["marking_path"], 'w') as f:
+        f.write(str(im))
+        f.write('\n')
+        f.write(str(fm))
+
+    xes_exporter.apply(new_xes_log, session["xes_path"])
+
+    
+    with open(session["cost_file_path"], "w") as f:
+        for index in trst:
+            if(index[1].lower().replace(" ", "")=="none"):
+                f.write(index[0].lower().replace(" ", "")+" 0 0")
+            else:
+                f.write(index[1].lower().replace(" ", "")+" 1 1")    
+            f.write('\n')
+        #f.write("none"+" 0 0") remove comment to consider invisible transitions
+        f.close()
+
+    #session["dfg"]=dfg
+
+    
+    #print(str(gviz)+"£"+str(im)+"£"+str(fm)+"£"+str(list(activities))+"£"+str(trst))
+
+    print(trst)
+    print(activities)
+
+
+    return {"risposta": str(gviz)+"£"+str(im)+"£"+str(fm)+"£"+str(list(activities))+"£"+str(trst)+"£"+str(new_grafo_frequency)}
+
+
 
 @app_conformance.route('/mapPnmlBis', methods=['POST'])
 def mapPnmlBis():

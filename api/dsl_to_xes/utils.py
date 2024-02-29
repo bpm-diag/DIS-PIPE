@@ -14,7 +14,7 @@ import os
 #function to debug by populating the data sources
 #--------------------------------------------------------------------
 def fromDSLtoXES(inputDSL):
-    dsl = inputDSL.split("steps:\n\t\t- ")
+    dsl = inputDSL.split("steps:\n\n\n\t\t- ")  #Cambiato rispetto a quando si usano API
     pipeline_details = dsl[0]
     steps_details = dsl[1].split("\n\t\t-")
     pipeline_name = pipeline_details.split(" {")[0].replace("Pipeline ", "").replace(" ", "")
