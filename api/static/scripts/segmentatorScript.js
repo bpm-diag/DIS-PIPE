@@ -44,7 +44,7 @@ function startSegmentator(){
 				xhr.setRequestHeader('Array-Data', jsonData);
 			},
 			success: function (data) {
-				console.log("XD")
+				// console.log("XD")
 				reloadLikeForm()
 			},
 			error: function (result) {
@@ -114,7 +114,7 @@ function openMacroTaskPopup(){
             withCredentials: true
         },
         success: function (data) {
-            console.log(data)
+            // console.log(data)
 			const tableBody = document.getElementById('table-body');
 
 			const column1 = document.createElement("th")

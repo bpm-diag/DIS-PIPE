@@ -18,7 +18,7 @@ function renameProject(){
 		if (regex.test(nuovoNome)) {
 			alert("La stringa contiene caratteri speciali.");
 		} else {
-			console.log("La stringa è valida.");
+			// console.log("La stringa è valida.");
 			var oReq1 = new XMLHttpRequest();
 			oReq1.addEventListener("load", renameProjectListener);
 			oReq1.open("POST", frontend+"renameProject/"+nuovoNome, false);
@@ -28,7 +28,7 @@ function renameProject(){
 }
 
 function renameProjectListener(){
-	console.log(this.responseText)
+	// console.log(this.responseText)
 	document.getElementById('mapTitle').innerHTML = this.responseText
 }
 
@@ -41,7 +41,7 @@ function renameProjectListener(){
 
 
 function update(){
-	console.log("update normale")
+	// console.log("update normale")
 	document.getElementById('updated').value = true;
 	document.getElementById('file').click();
 	sessionStorage.setItem('segmentatore', 'NO');
@@ -49,7 +49,7 @@ function update(){
 
 }
 function updateSegmentator(){
-	console.log("update segmentator")
+	// console.log("update segmentator")
 	document.getElementById('updated').value = true;
 	document.getElementById('file').click();
 	sessionStorage.setItem('segmentatore', 'YES');
@@ -60,7 +60,7 @@ function openDecisionMakingSegementator(){
 	document.getElementById("blocker_choseEndSeg").style.display = "block";
     document.getElementById("choseEndSeg").style.display = "block";
 	const svgContent = document.getElementById('graphContainer').innerHTML;
-	console.log(svgContent)
+	// console.log(svgContent)
 	// Assuming you have the SVG content in a variable called 'svgContent'
 	const parser = new DOMParser();
 	const doc = parser.parseFromString(svgContent, "image/svg+xml");
@@ -81,7 +81,7 @@ function openDecisionMakingSegementator(){
 	}
 
 	}
-	console.log(nodeTexts);
+	// console.log(nodeTexts);
 
 	const select = document.getElementById("endSegAct");
 
@@ -106,7 +106,7 @@ function closechoseEndSeg(){
 
 var selectCount = 1; 
 function addNewEndAct(){
-	console.log("ora fai add")
+
 	var containerEnd = document.getElementById("containerEnd");
 
 	// Get the addEnd0 div
@@ -162,11 +162,11 @@ function removeEndAct(){
 	var divToRemove = button.parentNode;
 	var spanElement = divToRemove.querySelector("b");
 	if(spanElement){
-		console.log(spanElement.innerHTML)
+		// console.log(spanElement.innerHTML)
 		elementToRemove=spanElement.innerHTML
 	
 		segmemtator_array = segmemtator_array.filter((element) => element !== elementToRemove);
-		console.log(segmemtator_array); // Output: [1, 2, 4, 5]
+		// console.log(segmemtator_array); // Output: [1, 2, 4, 5]
 		
 		// Get the parent element of the div
 		var parent = divToRemove.parentNode;
@@ -200,7 +200,7 @@ function closeImportMenu(){
 }
 
 function changeConstraint(){
-	console.log($("#selectFun option:selected").attr("title"));
+	// console.log($("#selectFun option:selected").attr("title"));
 	var constraint_definition=$("#selectFun option:selected").attr("title");
 	var constraint_title=$("#selectFun option:selected").text();
 	$('#definitions_constraint').text(constraint_title+": "+constraint_definition);
@@ -536,9 +536,9 @@ function getDslSteps(graphNodes, graphEdges){
 		}
 	}
 	// order DSL steps
-	console.log(graphNodes);
-	console.log(graphEdges);
-	console.log(dslSteps);
+	// console.log(graphNodes);
+	// console.log(graphEdges);
+	// console.log(dslSteps);
 	var orderedDslSteps = [];
 	//populate start and end
 	orderedDslSteps[0] = ['start', '', ''];
@@ -558,7 +558,7 @@ function getDslSteps(graphNodes, graphEdges){
 			}
 		}
 	}
-	console.log(orderedDslSteps);
+	// console.log(orderedDslSteps);
 	return orderedDslSteps;
 }
 

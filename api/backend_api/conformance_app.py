@@ -651,9 +651,8 @@ def uploadDslFile():
     try:
         new_xes=fromDSLtoXES(file_content)
     except Exception as e:
-        print("pippobaudo")
         print(e)
-        return(str("error"))
+        return {"risposta": "errore" , "type": str(e) }
      
     ######
     
