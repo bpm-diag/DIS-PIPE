@@ -1,19 +1,31 @@
 
 
 import pyodbc
-
-server = 'localhost' 
-port= '5432'
-database = 'dove' 
-username = 'postgres' 
-password = 'ubuntu-777' 
-
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
+import backend
+
+if (backend.path_f=="0.0.0.0"):
+   serverDB = 'flask_db' 
+   portDB = '5432'
+   databaseDB = 'dove' 
+   usernameDB = 'postgres' 
+   passwordDB = 'postgres' 
+   URL_DATABASE= "jdbc:postgresql://"+serverDB+":"+portDB
+else:
+   serverDB = 'localhost' 
+   portDB = '5432'
+   databaseDB = 'dove' 
+   usernameDB = 'postgres' 
+   passwordDB = 'ubuntu-777' 
+   URL_DATABASE= "jdbc:postgresql://"+serverDB+":"+portDB
+
+
+
 def createDatabase(databaseName):
    cnxn = psycopg2.connect(
-      user='postgres', password='ubuntu-777', host='127.0.0.1', port= '5432'
+      user=usernameDB, password=passwordDB, host=serverDB, port= portDB
    )
 
    cnxn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
@@ -22,7 +34,7 @@ def createDatabase(databaseName):
 
    sqlCreateDatabase = "create database "+name_Database+";"
 
-   cursor.execute(sqlCreateDatabase);
+   cursor.execute(sqlCreateDatabase)
 
    cursor.close()
 
@@ -30,13 +42,8 @@ def createDatabase(databaseName):
 
 def applyDbSchema(databaseName):
 
-   server = 'localhost' 
-   port= '5432'
-   username = 'postgres' 
-   password = 'ubuntu-777' 
-
    cnxn = psycopg2.connect(
-      database=databaseName, user=username, password=password, host=server, port= port
+      database=databaseName, user=usernameDB, password=passwordDB, host=serverDB, port = portDB
    )
    cnxn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT);
 

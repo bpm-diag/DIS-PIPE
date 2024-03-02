@@ -128,7 +128,7 @@ app.secret_key = "hello"
 sess = Session()
 sess.init_app(app)
 
-
+path_f=""
 with open('../properties.txt') as f:
     lines = f.readlines()
     frontend = lines[0]
@@ -1337,6 +1337,9 @@ if(path_f=="127.0.0.1"):
     #context = ('key/localhost/localhost.crt', 'key/localhost/localhostd.key')
     #pp.run(host=path_f, port=int(port_f), debug=True, ssl_context=context)
     app.run(host=path_f, port=int(port_f), debug=True)
+elif(path_f=="0.0.0.0"):
+    print("DOCKER")
+    app.run(host='0.0.0.0', port=7778, debug=True)
 else:
     port = int(os.environ.get('PORT', port_f))
     context = ('key/certificate.crt', 'key/private.key')    #certificate and key files
