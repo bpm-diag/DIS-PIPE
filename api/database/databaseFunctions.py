@@ -4,9 +4,21 @@ import pyodbc
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
-import backend
 
-if (backend.path_f=="0.0.0.0"):
+with open('../properties.txt') as f:
+    lines = f.readlines()
+    frontend = lines[0]
+    frontend = frontend.split(': ')
+    http = frontend[1]
+    frontend = frontend[1]
+    frontend = frontend.split('//')
+    path_f = frontend[1].split(':')[0]
+    port_f = frontend[1].split(':')[1]
+    port_f = port_f.split('/')[0]
+f.close()
+
+
+if (path_f=="0.0.0.0"):
    serverDB = 'flask_db' 
    portDB = '5432'
    databaseDB = 'dove' 

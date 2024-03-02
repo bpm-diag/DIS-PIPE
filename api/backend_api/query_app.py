@@ -62,11 +62,23 @@ from rule import *
 import databaseFunctions
 
 from backend_classes import *
-import backend
 
 ############################################################
 #________________________QUERY API_________________________#
 ############################################################
+
+with open('../properties.txt') as f:
+    lines = f.readlines()
+    frontend = lines[0]
+    frontend = frontend.split(': ')
+    http = frontend[1]
+    frontend = frontend[1]
+    frontend = frontend.split('//')
+    path_f = frontend[1].split(':')[0]
+    port_f = frontend[1].split(':')[1]
+    port_f = port_f.split('/')[0]
+f.close()
+
 
 app_query = Blueprint('app_query',__name__)
 
@@ -104,7 +116,7 @@ def queryDb():
     #os.system("java -jar XesToRxesPlus_PostgresDocker.jar "+session["databaseName"]+" "+runningXesPath)
     #print("  \n")
     
-    if (backend.path_f=="0.0.0.0"):
+    if (path_f=="0.0.0.0"):
         db_data_jar_path=process_string(session["database_jar"]+"/XesToRxesPlus_PostgresDocker.jar")
         if(db_data_jar_path[0]=="/"):
             print("sono all'inizio jar")

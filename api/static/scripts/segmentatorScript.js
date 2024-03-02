@@ -1,3 +1,6 @@
+dataCloud=false
+
+
 function callSegmentator(){
     var oReq = new XMLHttpRequest();
 	oReq.addEventListener("load", callSegmentatorListener);
@@ -57,8 +60,10 @@ function startSegmentator(){
 }
 
 function openCheckTimePopupFix(){
-	document.getElementById("blocker_checkTimeFix").style.display = "block"
-	document.getElementById("checkTimeFix").style.display = "block"
+	if(dataCloud){
+		document.getElementById("blocker_checkTimeFix").style.display = "block"
+		document.getElementById("checkTimeFix").style.display = "block"
+	}
 }
 
 function closeCheckTimeFix(){
@@ -70,8 +75,11 @@ function closeCheckTimeFix(){
 
 
 function openCheckTimePopup(){
-	document.getElementById("blocker_checkTime").style.display = "block"
-	document.getElementById("checkTime").style.display = "block"
+	if(dataCloud){
+		document.getElementById("blocker_checkTime").style.display = "block"
+		document.getElementById("checkTime").style.display = "block"
+	}
+
 }
 
 function closeCheckTime(){
@@ -83,7 +91,7 @@ function closeCheckTime(){
 
 function openCheckSegmentatorPopup(){
 	console.log(total_trace_number)
-	if(total_trace_number==1){
+	if(dataCloud && total_trace_number==1){
 		document.getElementById("blocker_checkSeg").style.display = "block"
 		document.getElementById("checkSeg").style.display = "block"
 	}
