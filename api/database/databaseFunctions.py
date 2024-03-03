@@ -30,7 +30,7 @@ else:
    portDB = '5432'
    databaseDB = 'dove' 
    usernameDB = 'postgres' 
-   passwordDB = 'ubuntu-777' 
+   passwordDB = 'postgres' 
    URL_DATABASE= "jdbc:postgresql://"+serverDB+":"+portDB
 
 

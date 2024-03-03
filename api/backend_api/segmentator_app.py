@@ -135,8 +135,8 @@ def segmentator():
 
 
     print("Current working directory, quella che mi serve: {0}".format(os.getcwd()))
-    print("tutti i file sono: ")
-    print(os.listdir())    
+    # print("list all files")
+    # print(os.listdir())    
     # os.system("java -jar traceAligner.jar align d31.pnml d31.xes cost_file 10 40 SYMBA false")
     os.system('./al -d files/UILog.config')
     
@@ -177,7 +177,7 @@ def startSegmentator():
 
 
     
-    print("start segmentator")
+    print("startSegmentator() function")
 
     array_data = request.headers.get("Array-Data")
 

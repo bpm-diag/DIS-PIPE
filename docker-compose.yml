@@ -1,9 +1,9 @@
 version: "7.0"
 
 services:
-  demopipe_app:
-    container_name: demopipe_app
-    image: uro/demopipe_app:1.1.1
+  dis-pipe:
+    container_name: dis-pipe
+    image: uro/demo_dis-pipe:1.1.0
     build: .
     ports:
       - "7778:7778"

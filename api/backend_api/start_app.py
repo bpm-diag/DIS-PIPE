@@ -197,7 +197,7 @@ def timeParser(filepath):
                             temp_i=temp_i+1 
                             dict_tempo_temp[str(temp_i)]=child
                         except Exception as e:
-                            print("error at the beginning")
+                            print("Error at the beginning")
                         if(len(dict_tempo_temp)>0):
                             break
                     if(len(dict_tempo_temp)>0):
@@ -219,7 +219,7 @@ def timeParser(filepath):
                 date_obj=datetime.fromisoformat(child2.get("value"))
                 
                 if((re.match(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{2}:\d{2}$", child2.get("value")) is not None) or (re.match(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$",child2.get("value"))) is not None):
-                    print("STOINIFF primo")
+                    print("first if timeParser")
                     dataTempo_less = (date_obj.isoformat().split("+")[0]).split(".")[0]
 
                     micsecond=""
@@ -238,13 +238,9 @@ def timeParser(filepath):
                         timezone=""
 
                     dataTempo=dataTempo_less+micsecond+timezone
-                    #print("i milli sono 0")
                 else:    
                     dataTempo = child2.get("value")
 
-
-                #print(pattern1)
-                #print(dataTempo)
 
 
                 if is_valid_datetime_string(pattern1,dataTempo):
@@ -471,7 +467,7 @@ def initialAction():
             test_activity_dictionary = [float(x) for x in activity_dictionary[j]]
             mean_dizionario[j]=statistics.mean(test_activity_dictionary)
         except Exception as e:
-            print(f"777 An error of type {type(e).__name__} occurred: {e}")
+            print(f"In InitialAction an error of type {type(e).__name__} occurred: {e}")
             print(activity_dictionary[j])
 
     total_dizionario=dict.fromkeys(session["activity_list"])
@@ -482,7 +478,7 @@ def initialAction():
             test_activity_dictionary = [float(x) for x in activity_dictionary[j]]
             total_dizionario[j]=sum(test_activity_dictionary)
         except Exception as e:
-            print(f"777 An error of type {type(e).__name__} occurred: {e}")
+            print(f"An error of type {type(e).__name__} occurred: {e}")
             print(activity_dictionary[j])
         
     median_dizionario=dict.fromkeys(session["activity_list"])
@@ -712,8 +708,6 @@ def initialAction():
     content=""
    
 
-    # print(dfg)
-    # print("\n")
     for i in range(0, len(log)):
         for j in range(0, len(log[i])-1):
     #         for k in range(j, len(log[i])):

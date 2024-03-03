@@ -99,8 +99,8 @@ def queryDb():
     
     #global log_path
     #global databaseName
-    print(session["databaseName"])
-    print(session["log_path"])
+    # print(session["databaseName"])
+    # print(session["log_path"])
     #databaseName="TestDB"
     #databaseName="datacloud"
     #runningXesPath=session["log_path"]
@@ -119,24 +119,24 @@ def queryDb():
     if (path_f=="0.0.0.0"):
         db_data_jar_path=process_string(session["database_jar"]+"/XesToRxesPlus_PostgresDocker.jar")
         if(db_data_jar_path[0]=="/"):
-            print("sono all'inizio jar")
+            print("start database jar path")
             db_data_jar_path=process_string(session["database_jar"]+"/XesToRxesPlus_PostgresDocker.jar")[1:]
 
         runningXesPath=process_string(session["directory_log"]+"/"+session["log_name"])
         if(runningXesPath[0]=="/"):
-            print("sono all'inizio xes")
+            print("start xes path")
             runningXesPath=process_string(session["directory_log"]+"/"+session["log_name"])[1:]
 
         db_data_jar = subprocess.Popen( "java -jar " + db_data_jar_path +" "+session["databaseName"]+" "+runningXesPath+" "+"'"+databaseFunctions.URL_DATABASE+"/"+session["databaseName"]+"?user="+databaseFunctions.usernameDB+"&password="+databaseFunctions.passwordDB+"'", shell=True)
     else:
         db_data_jar_path=process_string(session["database_jar"]+"/XesToRxesPlus_Postgres.jar")
         if(db_data_jar_path[0]=="/"):
-            print("sono all'inizio jar")
+            print("start database jar path")
             db_data_jar_path=process_string(session["database_jar"]+"/XesToRxesPlus_Postgres.jar")[1:]
 
         runningXesPath=process_string(session["directory_log"]+"/"+session["log_name"])
         if(runningXesPath[0]=="/"):
-            print("sono all'inizio xes")
+            print("start xes path")
             runningXesPath=process_string(session["directory_log"]+"/"+session["log_name"])[1:]    
 
         db_data_jar = subprocess.Popen( "java -jar " + db_data_jar_path +" "+session["databaseName"]+" "+runningXesPath, shell=True)
@@ -171,7 +171,6 @@ def initializeQuery():
     #cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
     #cnxn = pyodbc.connect('DRIVER={Devart ODBC Driver for PostgreSQL};Server='+server+';Database='+database+';User ID='+username+';Password='+password+';String Types=Unicode')
     
-    print(session["databaseName"])
     #establishing the connection
     cnxn = psycopg2.connect(
         database=session["databaseName"], user=databaseFunctions.usernameDB, password=databaseFunctions.passwordDB, host=databaseFunctions.serverDB, port= databaseFunctions.portDB
@@ -217,8 +216,6 @@ def makeQuery():
 
     #cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
     #cnxn = pyodbc.connect('DRIVER={Devart ODBC Driver for PostgreSQL};Server='+server+';Database='+database+';User ID='+username+';Password='+password+';String Types=Unicode')
-    
-    print(session["databaseName"])
     
     #establishing the connection
     cnxn = psycopg2.connect(
@@ -294,7 +291,6 @@ def doQuery1():
     #cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
     #cnxn = pyodbc.connect('DRIVER={Devart ODBC Driver for PostgreSQL};Server='+server+';Database='+database+';User ID='+username+';Password='+password+';String Types=Unicode')
     
-    print(session["databaseName"])
     
     #establishing the connection
     cnxn = psycopg2.connect(
@@ -324,7 +320,7 @@ def doQuery1():
                      where key='DataSourceName' and NOT EXISTS( \
                          select * \
                          from new_log_db nldb2 \
-                         where nldb1.eventname=nldb2.eventname and nldb2.key='DataSourceType' and nldb2.value='1' \
+                         where nldb1.eventname=nldb2.eventname and ((nldb2.key='DataSourceType' and nldb2.value='Input') or (nldb2.key='DataSourceType' and nldb2.value='Both')) \
                      )")
 
 
@@ -366,7 +362,6 @@ def doQuery2():
     #cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
     #cnxn = pyodbc.connect('DRIVER={Devart ODBC Driver for PostgreSQL};Server='+server+';Database='+database+';User ID='+username+';Password='+password+';String Types=Unicode')
     
-    print(session["databaseName"])
     
     #establishing the connection
     cnxn = psycopg2.connect(
@@ -401,7 +396,7 @@ def doQuery2():
                         ) and NOT EXISTS ( \
                             select * \
                             from new_log_db nldb3 \
-                            where nldb1.eventname=nldb3.eventname and ((nldb3.key='DataSourceType' and nldb3.value='Output') or (nldb3.key='DataSourceType' and nldb3.value='Both')) \
+                            where nldb1.eventname=nldb3.eventname and ((nldb3.key='DataSourceType' and nldb3.value='Input') or (nldb3.key='DataSourceType' and nldb3.value='Both')) \
                         );")
     cursor2_1.close()
 
@@ -417,7 +412,7 @@ def doQuery2():
                      ) and NOT EXISTS ( \
                          select * \
                          from new_log_db nldb3 \
-                         where nldb1.eventname=nldb3.eventname and ((nldb3.key='DataSourceType' and nldb3.value='Output') or (nldb3.key='DataSourceType' and nldb3.value='Both')) \
+                         where nldb1.eventname=nldb3.eventname and ((nldb3.key='DataSourceType' and nldb3.value='Input') or (nldb3.key='DataSourceType' and nldb3.value='Both')) \
                      );")
     cursor2_2.close()
 
@@ -488,7 +483,7 @@ def checkDatabasePresence():
             #applyDbSchema(session["databaseName"])
             response = "no"
         connection.close()
-        print('Done')
+        # print('Done')
 
         return jsonify({"presence":response}) 
     
@@ -538,7 +533,6 @@ def createEventLog():
     #cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
     #cnxn = pyodbc.connect('DRIVER={Devart ODBC Driver for PostgreSQL};Server='+server+';Database='+database+';User ID='+username+';Password='+password+';String Types=Unicode')
     
-    print(session["databaseName"])
     #establishing the connection
     cnxn = psycopg2.connect(
         database=session["databaseName"], user=databaseFunctions.usernameDB, password=databaseFunctions.passwordDB, host=databaseFunctions.serverDB, port= databaseFunctions.portDB

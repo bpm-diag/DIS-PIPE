@@ -187,12 +187,12 @@ def jarCalling():
 
     cartellaPddlPath=process_string(session["conformace_jar"]+"/fast-downward/src")
     cartellaSymbaPath=process_string(session["conformace_jar"]+"/seq-opt-symba-2")
-    print("chiamata a jar è questa")
-    print(session["log_path"])
-    print(session["directory_log"])
-    print(session["log_name"])
+    # print("jar calling")
+    # print(session["log_path"])
+    # print(session["directory_log"])
+    # print(session["log_name"])
     print("java -jar " + jarPath +" align "+pnmlPath+" "+xesPath+" "+costPath+" "+minLen +" "+maxLen+" "+planner+" "+duplicate+" "+cartellaPddlPath+" "+cartellaSymbaPath )
-    print("chiamata a jar è fininta")
+    # print("jar end")
     process_jar = subprocess.Popen( "java -jar " + jarPath +" align "+pnmlPath+" "+xesPath+" "+costPath+" "+minLen +" "+maxLen+" "+planner+" "+duplicate+" "+cartellaPddlPath+" "+cartellaSymbaPath , shell=True)
     session["pid_jar"]=process_jar.pid
     try:
@@ -202,7 +202,7 @@ def jarCalling():
         print('Timed out - killing', session["pid_jar"])
         os.kill(session["pid_jar"], signal.SIGKILL) #or signal.SIGKILL 
         #process_jar.kill()
-    print("\njar done")
+    # print("\njar done")
     
     
     print("  \n")
@@ -283,7 +283,7 @@ def traceDetail():
     allTraceName=""
 
     working_dir=os.getcwd()
-    print("XDBODE")
+
     print(working_dir)
     if(working_dir=="/root/datacloud/DIS-PIPE-development-current/api/jar"):
         os.chdir("..")
@@ -314,7 +314,7 @@ def updateTraceDetail():
     nameTrace = str(request.args.get('nameTrace'))
     #global plans_path
     working_dir=os.getcwd()
-    print("X2")
+
     print(working_dir)
   
     file_name = os.path.basename(session["plans_path"]+'/'+nameTrace)
@@ -365,7 +365,7 @@ def generalTraceInfo():
     dict_skip_ins ={} 
 
     working_dir=os.getcwd()
-    print("la cartella su cui lavora general trace info è:")
+    print("general trace directory: ")
     print(working_dir)
 
     # plans_path="./jar/fast-downward/src/plans" 
@@ -646,7 +646,7 @@ def uploadDslFile():
     # Read the file content
     file_content = file.read().decode('utf-8')
     # Print the file content
-    print(file_content)
+    # print(file_content)
 
     try:
         new_xes=fromDSLtoXES(file_content)
@@ -785,10 +785,10 @@ def mapPnmlBis():
         print(transition_id)
         
         if os.path.exists(path_finale):
-            print("sono nel path finale")
+            # print("sono nel path finale")
             execute_remap = rephrase_text(path_finale, transition_id, after_text, path_finale)
         else:
-            print("sono nel path iniziale")
+            # print("sono nel path iniziale")
             execute_remap = rephrase_text(path_base, transition_id, after_text, path_finale)
            
         if execute_remap:
@@ -837,7 +837,7 @@ def getPnmlExistence():
 def createRemap():
 
 
-    print("creato un remap XDXDXDXDXDXXD")
+    print("createRemap() function")
 
     with open(session["directory_net_pnml"][1:]+'/petri_final.pnml') as f:
         trace = f.readlines()
