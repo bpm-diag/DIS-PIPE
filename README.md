@@ -8,15 +8,12 @@
 
 DIS-PIPE provides scalable integration of **process mining** techniques and **artificial intelligence** algorithms to learn the structure of **Big Data pipelines** by extracting, processing, and interpreting vast amounts of event data collected from several data sources. Furthermore, DIS-PIPE supports a variety of analytics techniques for visualizing the discovered pipelines together with detailed diagnostics information about their execution.
 
-<!--- The architecture of the DIS-PIPE consists of two software components referred to as [DIS-PIPE-Event-Log-Manager](https://github.com/DataCloud-project/DIS-PIPE-Event-Log-Manager) and [DIS-PIPE-Discovery-And-Visualization](https://github.com/DataCloud-project/DIS-PIPE-Discovery-And-Visualization) as shown in the figure below. -->
-
-DIS-PIPE consists of a Web API implemented using Python and **Flask**[^1]:
-
-- **backend.py**: uses the PM4PY library[^2] and Process Discovery algorithms to find a suitable process model that describes the order of events/activities of a given event log. In particular, for Process Discovery it has been used the DFG[^3] algorithm, that, together with some input parameters, returns a Digraph in DOT language format. It also exposes a web application implemented using **html, css and javascript**. It uses the Viz.js[^4] library to represents the DOT language format.
 
 Specifically, it provides a graphical user interface for importing event logs in the IEEE Standard for eXtensible Event Stream (XES) format and executing the functionalities by leveraging a drag-and-drop workbench. The architecture of DIS-PIPE can be summarized in the figure below.
 
-![alt text](https://raw.githubusercontent.com/DataCloud-project/DIS-PIPE/main/images/DisPipeArchitecture.png) 
+<p align="center">
+    <img src="https://raw.githubusercontent.com/DataCloud-project/DIS-PIPE/main/images/DisPipeArchitecture.png">
+</p>
 
 <!--- It employs *process mining* algorithms enhanced with *artificial intelligence* solutions to efficiently build the sequence flow and to learn all data flows and event-based conditions during their execution. In addition, it integrates the discovered pipelines with DEF-PIPE through user-friendly visual workbenches, such as flowcharts, statistics, and dashboards.
 **DIS-PIPE-Discovery-And-Visualization** component provides a graphical user interface for importing event logs in the IEEE Standard for eXtensible Event Stream (XES) format and executing the functionalities by leveraging a drag-and-drop workbench. -->
