@@ -1,18 +1,17 @@
-version: "7.0"
+version: "9.0"
 
 services:
   dis-pipe:
     container_name: dis-pipe
-    image: uro/demo_dis-pipe:1.1.0
-    build: .
+    image: registry.gitlab.com/jacoporossi/demo_dis-pipe/demo_dis-pipe:1.1.9
     ports:
       - "7778:7778"
     environment:
-      - DB_URL=postgresql://postgres:postgres@flask_db
+      - DB_URL=postgresql://postgres:postgres@demo_db
     depends_on:
-      - flask_db
-  flask_db:
-    container_name: flask_db
+      - demo_db
+  demo_db:
+    container_name: demo_db
     image: postgres:12
     ports:
       - "5432:5432"
