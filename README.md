@@ -16,7 +16,7 @@ DIS-PIPE consists of a Web API implemented using Python and **Flask**[^1]:
 
 Specifically, it provides a graphical user interface for importing event logs in the IEEE Standard for eXtensible Event Stream (XES) format and executing the functionalities by leveraging a drag-and-drop workbench. The architecture of DIS-PIPE can be summarized in the figure below.
 
-![alt text](https://raw.githubusercontent.com/DataCloud-project/DIS-PIPE/main/images/DIS-PIPE-Architecture.PNG)
+![alt text](https://raw.githubusercontent.com/DataCloud-project/DIS-PIPE/main/images/DisPipeArchitecture.png)
 
 <!--- It employs *process mining* algorithms enhanced with *artificial intelligence* solutions to efficiently build the sequence flow and to learn all data flows and event-based conditions during their execution. In addition, it integrates the discovered pipelines with DEF-PIPE through user-friendly visual workbenches, such as flowcharts, statistics, and dashboards.
 **DIS-PIPE-Discovery-And-Visualization** component provides a graphical user interface for importing event logs in the IEEE Standard for eXtensible Event Stream (XES) format and executing the functionalities by leveraging a drag-and-drop workbench. -->
