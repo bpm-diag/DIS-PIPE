@@ -32,7 +32,7 @@ The DIS-PIPE components include:
 To use the tool, you need to have installed docker on your machine.
 
 ## To use the code
-1. Download the docker-compose.yml file in a folder. 
+1. Download the [docker-compose.yml](https://github.com/bpm-diag/DIS-PIPE/blob/main/docker-compose.yml) file in your personal folder. 
 2. Open the terminal in the folder where you have downloaded the file.
 4. Run: ``docker compose up``;
 5. Go to your browser on http://localhost:7778/ or http://127.0.0.1:7778/
