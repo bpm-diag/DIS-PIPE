@@ -8,8 +8,7 @@
 
 DIS-PIPE provides scalable integration of **process mining** techniques and **artificial intelligence** algorithms to learn the structure of **Big Data pipelines** by extracting, processing, and interpreting vast amounts of event data collected from several data sources. Furthermore, DIS-PIPE supports a variety of analytics techniques for visualizing the discovered pipelines together with detailed diagnostics information about their execution.
 
-
-Specifically, it provides a graphical user interface for importing event logs in the IEEE Standard for eXtensible Event Stream (XES) format and executing the functionalities by leveraging a drag-and-drop workbench. The architecture of DIS-PIPE can be summarized in the figure below.
+DIS-PIPE includes a frontend with a GUI written in HTML, Javascript and CSS, and a backend that exposes a Python Flask web application to receive the results of pipeline discovery on the base of user inputs.
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/DataCloud-project/DIS-PIPE/main/images/DisPipeArchitecture.png">
