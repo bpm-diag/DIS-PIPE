@@ -152,7 +152,6 @@ function databasePresenceListener(){
 			NoButton.innerHTML = "No";
 			NoButton.style = "font-size: 16px; width: 20%;"
 			var div = document.getElementById('querydivfacose');
-			div.appendChild(NoButton);
 
 			NoButton.id="nobuttonTranslate"
 			
