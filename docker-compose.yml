@@ -2,6 +2,7 @@ version: "9.0"
 
 services:
   dis-pipe:
+    platform: linux/amd64
     container_name: dis-pipe
     image: registry.gitlab.com/jacoporossi/demo_dis-pipe/demo_dis-pipe:1.1.9
     ports:
@@ -11,6 +12,7 @@ services:
     depends_on:
       - demo_db
   demo_db:
+    platform: linux/amd64
     container_name: demo_db
     image: postgres:12
     ports:
