@@ -11,7 +11,7 @@ DIS-PIPE provides scalable integration of **process mining** techniques and **ar
 The tool includes a frontend with a GUI written in HTML, Javascript and CSS, and a backend that exposes a Python Flask web application to receive the results of pipeline discovery on the base of user inputs.
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/bpm-diag/DIS-PIPE/main/images/DisPipeArchitecture.png">
+    <img src="https://raw.githubusercontent.com/bpm-diag/DIS-PIPE/main/images/DISPIPEarchitecture.png">
 </p>
 
 The DIS-PIPE components include:
