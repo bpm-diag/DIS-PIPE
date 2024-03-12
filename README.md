@@ -28,6 +28,9 @@ The DIS-PIPE components include:
 - *Dark data discovery*: which use the query functionality to give value to data involved in pipeline executions.
 
 
+## Demo
+A screen-cast showing the tool in action is available at: [https://youtu.be/of6Gi1XZVkU?si=wN-aDThjjMgVvRhr](https://youtu.be/of6Gi1XZVkU?si=wN-aDThjjMgVvRhr)
+
 ## Requirements
 To use the tool, you need to have installed docker on your machine.
 
