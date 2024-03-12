@@ -1,19 +1,19 @@
-version: "9.0"
+version: "14.0"
 
 services:
   dis-pipe:
     platform: linux/amd64
     container_name: dis-pipe
-    image: registry.gitlab.com/jacoporossi/demo_dis-pipe/demo_dis-pipe:1.1.9
+    image: registry.gitlab.com/jacoporossi/dis-pipe-demo/demo_dis-pipe:2.0.0
     ports:
       - "7778:7778"
     environment:
-      - DB_URL=postgresql://postgres:postgres@demo_db
+      - DB_URL=postgresql://postgres:postgres@data_db
     depends_on:
-      - demo_db
-  demo_db:
+      - data_db
+  data_db:
     platform: linux/amd64
-    container_name: demo_db
+    container_name: data_db
     image: postgres:12
     ports:
       - "5432:5432"
