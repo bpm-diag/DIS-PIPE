@@ -40,9 +40,9 @@ To use the tool, you need to have installed docker on your machine.
 4. Run: ``docker compose up``;
 5. Go to your browser on http://localhost:7778/ or http://127.0.0.1:7778/
 
-## User Guide
+## Resources
 
-See the [example](https://github.com/bpm-diag/DIS-PIPE/tree/main/example) folder for instructions on how to run your first data pipeline discovery.
+There are some logs to test the tool in this [folder](https://github.com/bpm-diag/DIS-PIPE/tree/main/log).
 
 
 
