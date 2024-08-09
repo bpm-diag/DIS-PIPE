@@ -387,6 +387,74 @@ function checkRefresh(value){
 	</div>
 
 
+	<div class="blocker" id="blocker_editQuery1" onclick="closeEditQuery1()"></div>
+	<div class="form-popup" id="editQuery1">
+		<form action="" class="form-container" style="width: 70vb;">
+			<div style="text-align: center">
+				<span id="editQuery1_title" style="color:#7a4791; text-align: center; font-size: 25px;">Edit Query</span>
+			</div>
+			<hr style="background:#cfa8d5">
+			<br>
+			<center>
+				<label for="descriptionQuery1" style="font-size: 16px; font-weight: bold;">Description</label>
+				<br>
+				<textarea id="descriptionQuery1" placeholder="Enter description here..." style="width: 100%; height: 70px;"></textarea>
+				<br><br>
+				<label for="scriptQuery1" style="font-size: 16px; font-weight: bold;">Query</label>
+				<br>
+				<textarea id="scriptQuery1" placeholder="Enter query here..." style="width: 100%; height: 20vh;"></textarea>
+				<br><br>
+				<button style="padding: 10px; font-size: 16px;" type="button" onclick="closeEditQuery1()">Back</button>
+				<button style="padding: 10px; font-size: 16px;" type="button" onclick="updateEditQuery1()">Update Query</button>
+			</center>
+		</form>
+	</div>
+
+	<div class="blocker" id="blocker_editPersonalizedQuery" onclick="closeEditPersonalizedQuery()"></div>
+	<div class="form-popup" id="editPersonalizedQuery">
+		<form action="" class="form-container" style="width: 70vb;">
+			<div style="text-align: center">
+				<span id="editPersonalizedQuery_title" style="color:#7a4791; text-align: center; font-size: 25px;">Edit Query</span>
+			</div>
+			<hr style="background:#cfa8d5">
+			<br>
+			<center>
+				<label for="descriptionPersonalizedQuery" style="font-size: 16px; font-weight: bold;">Description</label>
+				<br>
+				<textarea id="descriptionPersonalizedQuery" placeholder="Enter description here..." style="width: 100%; height: 70px;"></textarea>
+				<br><br>
+				<label for="scriptPersonalizedQuery" style="font-size: 16px; font-weight: bold;">Query</label>
+				<br>
+				<textarea id="scriptPersonalizedQuery" placeholder="Enter query here..." style="width: 100%; height: 20vh;"></textarea>
+				<br><br>
+				<button style="padding: 10px; font-size: 16px;" type="button" onclick="closeEditPersonalizedQuery()">Back</button>
+				<button id="deleteQueryButtonId" style="padding: 10px; font-size: 16px;" type="button" onclick="deletePersonalizedQuery(id)">Delete Query</button>
+				<button id="updateQueryButtonId" style="padding: 10px; font-size: 16px;" type="button" onclick="updateEditPersonalizedQuery(id)">Update Query</button>
+			</center>
+		</form>
+	</div>
+
+
+	<div class="blocker" id="blocker_saveQuery" onclick="closesaveQuery()"></div>
+	<div class="form-popup" id="saveQuery">
+		<form action="" class="form-container" style="width: 70vb;">
+			<div style="text-align: center">
+				<span id="saveQuery_title" style="color:#7a4791; text-align: center; font-size: 25px;">Save Personalized Query</span>
+			</div>
+			<hr style="background:#cfa8d5">
+			<br>
+			<center>
+				<label for="descriptionSaveQuery1" style="font-size: 16px; font-weight: bold;">Description</label>
+				<br>
+				<textarea id="descriptionSaveQuery1" placeholder="Enter description here..." style="width: 100%; height: 70px;"></textarea>
+				<br><br>
+				<button style="padding: 10px; font-size: 16px;" type="button" onclick="closesaveQuery()">Back</button>
+				<button style="padding: 10px; font-size: 16px;" type="button" onclick="updatesaveQuery()">Confirm save</button>
+			</center>
+		</form>
+	</div>
+
+
 
 	<input type="checkbox" id="check" onclick="mainMenu()">
 	<label for="check">
@@ -479,7 +547,7 @@ function checkRefresh(value){
 						<p id='petriFreq' style='display:none'>Try</p>
 						<p id='petriPerf' style='display:none'>Try</p>
 						<p id='bpmn' style='display:none'>Try</p>
-						<p id='mapTitle' style="text-align: center;">{{ nameupload }}</p> <!--ondblclick="renameProject()"-->
+						<p id='mapTitle' style="text-align: center; cursor: pointer;" ondblclick="renameProject()">{{ nameupload }}</p>
 						<p id='median' style='display:none'>{{ median }}</p>
 						<p id='total' style='display:none'>{{ total }}</p>
 						<p id='traceDt' style='display:none'>{{ traceDt }}</p>
@@ -1646,10 +1714,13 @@ function checkRefresh(value){
 							<center>
 							<div id="qc2" class="conformance-container3 query-container2">
 								<div class="conformance-title quety-title">Query</div>
-								<hr>
+								<!--<hr>-->
+								<div>The name of the database is: <i>translated_log_db</i></div> 
+								<div>The columns of the database are: <i>trace_id, event_name, time, key, value</i></div>
+								<div>Example of a simple query: <i>select distinct trace_id, event_name from translated_log_db</i></div>
 								<br>
 
-								<div style="display: none;">
+								<div  style="display: none;"> <!-- -->
 							
 								<div id="query_filter_div">
 
@@ -1714,19 +1785,89 @@ function checkRefresh(value){
 								</div>
 								</div>
 
+								<div  id="tuttelecustomquery"> <!-- -->
+	
+	
+									<!-- <textarea style="font-size: 10px;" class="vmiddle" cols="50" rows="15" id="all_query_textarea">  </textarea> -->
+									<textarea style="font-size: 15px; font-size: 15px; width: 70vb; height:30vh" class="vmiddle" id="all_query_textarea"></textarea>
+								
+	
+									<!-- 
+									<input type="radio" name="condition" value="and">And
+									<input type="radio" name="condition" value="or">Or -->
+								
+									<div style="text-align:center">
+										<br>
+										<button class="conf_check_button" onclick="goback()" type="button" style="font-size: 16px;">Back</button>
+										<button class="conf_check_button" onclick="applicaFiltroLibero()" type="button" style="font-size: 16px;">Run query</button>
+										<button class="conf_check_button" onclick="saveQuery()" type="button" style="font-size: 16px;">Save query</button>
+										<br><br>
+									</div>
+								</div>
+
+								<hr>
+								<br>
+								<div class="conformance-title quety-title">Personalized Queries</div>
+								
+								<!--
 								<div style="text-align:center">
 									<br>
 									<div>Find all the data sources that appear in the log</div>
 									<div>as the output of some steps but are never used as input</div>
 									<br>
-									<button class="conf_check_button" onclick="doQuery1()" type="button" style="font-size: 16px;">Query1</button>
+									<button class="conf_check_button" onclick="doQuery1()" type="button" style="font-size: 16px;">Run query1</button>
 									<br><br><br><br>
 									<div>Find the amount of dark data that</div>
 									<div>the pipeline is producing on the cloud. </div>
 									<br>
-									<button class="conf_check_button" onclick="doQuery2()" type="button" style="font-size: 16px;">Query2</button>
+									<button class="conf_check_button" onclick="doQuery2()" type="button" style="font-size: 16px;">Run query2</button>
 									<br><br><br>
 								</div>
+								-->
+								<div style="text-align:center">
+									<div style="max-height: 200px; overflow-y: scroll; margin: 0 auto; display: inline-block;">
+										<table id="tabellaQuery" style="border-collapse: collapse; width: 100%;">
+											<thead>
+												<tr style="background-color: #7a4791;">
+													<th style="border: 1px solid #cfa8d5; padding: 8px; width: 25%;">ID</th>
+													<th style="border: 1px solid #cfa8d5; padding: 8px; width: 50%;">Description</th>
+													<th style="border: 1px solid #cfa8d5; padding: 8px; width: 25%;">Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr style="background-color: #e9deeb;">
+													<td style="border: 1px solid #cfa8d5; padding: 8px;">Query 1</td>
+													<td id="query1des" style="border: 1px solid #cfa8d5; padding: 8px;">Find all the data sources that appear in the log as the output of some steps but are never used as input</td>
+													<td style="border: 1px solid #cfa8d5; padding: 8px;">
+														<div style="display: flex; flex-direction: column; align-items: center;">
+															<button class="conf_check_button" onclick="doQuery1()" type="button" style="font-size: 16px; width: 120px; height: 30px;">Run query1</button>
+															<button class="conf_check_button" onclick="editQuery1()" type="button" style="font-size: 16px; width: 120px; height: 30px; margin-top: 10px; ">Edit query1</button>
+														</div>
+													</td>
+												</tr>
+												<tr style="background-color: #e9deeb;">
+													<td style="border: 1px solid #cfa8d5; padding: 8px;">Query 2</td>
+													<td style="border: 1px solid #cfa8d5; padding: 8px;">Find the amount of dark data that the pipeline is producing on the cloud</td>
+													<td style="border: 1px solid #cfa8d5; padding: 8px;">
+														<div style="display: flex; flex-direction: column; align-items: center;">
+															<button class="conf_check_button" onclick="doQuery2()" type="button" style="font-size: 16px; width: 120px; height: 30px;">Run query2</button>
+															<button disabled class="conf_check_button" onclick="editQuery2()" type="button" style="font-size: 16px; width: 120px; height: 30px; margin-top: 10px; ">Edit query2</button>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								
+								<br>
+								<br>
+								
+								
+								
+								
+								
+								
 
 								
 							
@@ -1740,7 +1881,7 @@ function checkRefresh(value){
 								<div class="conformance-title quety-title">Result</div>
 								<hr>
 								<br>
-								<div id="result_div">
+								<div id="result_div" style="max-height: 74vh; overflow: auto;">
 
 									
 								</div>

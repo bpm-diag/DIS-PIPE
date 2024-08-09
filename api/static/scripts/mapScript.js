@@ -88,13 +88,20 @@ function updateInfo(caso){
 
 //function to update the map, based on the slider change
 function pre_request(p_check){
-	document.getElementById("loadingMessage").style.visibility = "visible";	
-	request(p_check)
+	//document.getElementById("loadingMessage").style.visibility = "visible";	
+    $("#loadingMessage").css("visibility", "visible");
+	setTimeout(() => {
+	    request(p_check)
+
+        $("#loadingMessage").css("visibility", "hidden");
+
+	}, 7);
+
 }
 //function called by pre_request(p_check)
 function request(p_check) {
 
-	document.getElementById("loadingMessage").style.visibility = "hidden";
+	//document.getElementById("loadingMessage").style.visibility = "hidden";
 
 	var pf = document.getElementById("myPathF").value;
 	var af = document.getElementById("myActF").value;
