@@ -1152,26 +1152,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:14.102496+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:14.102496+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -1470,26 +1470,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:14.707335+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:14.707335+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -1567,26 +1567,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:14.908357+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:14.908357+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -1834,26 +1834,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:15.512321+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:15.512321+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -1931,26 +1931,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:15.714289+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:15.714289+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -2045,26 +2045,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:15.916030+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:15.916030+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -2159,26 +2159,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:16.117999+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:16.117999+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -2987,26 +2987,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:18.131338+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:18.131338+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -3101,26 +3101,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:18.332360+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:18.332360+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -3504,26 +3504,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:19.136692+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:19.136692+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -3601,26 +3601,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:19.337701+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:19.337701+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -3698,26 +3698,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:19.538719+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:19.538719+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -4067,26 +4067,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:20.343606+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:20.343606+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -4436,26 +4436,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:21.148471+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:21.148471+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -4533,26 +4533,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:21.349811+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:21.349811+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -4749,26 +4749,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:21.753241+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:21.753241+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
@@ -4846,26 +4846,26 @@
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Store-results-end"/>
+			<string key="concept:name" value="Store_results"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:21.954287+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="10"/>
-			<string key="StepName" value="Store-results"/>
+			<string key="StepName" value="Store_results"/>
 			<string key="StepContinuumLayer" value="Edge"/>
 			<string key="StepType" value="Consumer"/>
 		</event>
 		<event>
-			<string key="concept:name" value="Model-generated-end"/>
+			<string key="concept:name" value="Model_generated"/>
 			<string key="StepPhaseID" value="1"/>
 			<date key="time:timestamp" value="2024-03-01T17:11:21.954287+01:00"/>
 			<string key="PipelineID" value="jot1"/>
 			<string key="PipelineCommunicationMedium" value="cloud"/>
 			<string key="PipelineName" value="JOT-pilot-refmodel"/>
 			<string key="StepID" value="11"/>
-			<string key="StepName" value="Model-generated"/>
+			<string key="StepName" value="Model_generated"/>
 			<string key="StepContinuumLayer" value="Cloud"/>
 			<string key="StepType" value="Producer"/>
 		</event>
