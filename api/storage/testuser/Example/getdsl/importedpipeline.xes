@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<log>
+	<string key="creator" value="RefModel_Generator"/>
+	<extension name="Concept" prefix="concept" uri="http://code.deckfour.org/xes/concept.xesext"/>
+	<extension name="Time" prefix="time" uri="http://code.deckfour.org/xes/time.xesext"/>
+	<extension name="Organizational" prefix="org" uri="http://code.deckfour.org/xes/org.xesext"/>
+	<global scope="trace">
+		<string key="concept:name" value="name"/>
+	</global>
+	<global scope="event">
+		<string key="concept:name" value="name"/>
+		<string key="StepPhaseID" value="string"/>
+		<date key="time:timestamp" value="2024-07-08T14:37:47.785775+01:00"/>
+		<string key="PipelineName" value="name"/>
+		<string key="PipelineID" value="string"/>
+		<string key="PipelineCommunicationMedium" value="string"/>
+		<string key="StepID" value="string"/>
+		<string key="StepType" value="string"/>
+	</global>
+	<classifier name="Activity" keys="name"/>
+	<classifier name="activity classifier" keys="Activity"/>
+	<trace>
+		<string key="concept:name" value="1"/>
+		<event>
+			<string key="concept:name" value="ReceiveMeasurement-End"/>
+			<string key="StepPhaseID" value="1"/>
+			<date key="time:timestamp" value="2024-07-08T14:37:47.785827+01:00"/>
+			<string key="PipelineID" value="1"/>
+			<string key="PipelineCommunicationMedium" value="mediumWEB_SERVICE
+	"/>
+			<string key="PipelineName" value="telluUseCase"/>
+			<string key="StepID" value="0"/>
+			<string key="StepName" value="ReceiveMeasurement"/>
+		</event>
+		<event>
+			<string key="concept:name" value="FetchPatientData-End"/>
+			<string key="StepPhaseID" value="1"/>
+			<date key="time:timestamp" value="2024-07-08T14:37:47.785840+01:00"/>
+			<string key="PipelineID" value="1"/>
+			<string key="PipelineCommunicationMedium" value="mediumWEB_SERVICE
+	"/>
+			<string key="PipelineName" value="telluUseCase"/>
+			<string key="StepID" value="1"/>
+			<string key="StepName" value="FetchPatientData"/>
+		</event>
+		<event>
+			<string key="concept:name" value="CreateTask-End"/>
+			<string key="StepPhaseID" value="1"/>
+			<date key="time:timestamp" value="2024-07-08T14:37:47.785851+01:00"/>
+			<string key="PipelineID" value="1"/>
+			<string key="PipelineCommunicationMedium" value="mediumWEB_SERVICE
+	"/>
+			<string key="PipelineName" value="telluUseCase"/>
+			<string key="StepID" value="2"/>
+			<string key="StepName" value="CreateTask"/>
+		</event>
+		<event>
+			<string key="concept:name" value="FetchTaskResult-End"/>
+			<string key="StepPhaseID" value="1"/>
+			<date key="time:timestamp" value="2024-07-08T14:37:47.785860+01:00"/>
+			<string key="PipelineID" value="1"/>
+			<string key="PipelineCommunicationMedium" value="mediumWEB_SERVICE
+	"/>
+			<string key="PipelineName" value="telluUseCase"/>
+			<string key="StepID" value="3"/>
+			<string key="StepName" value="FetchTaskResult"/>
+		</event>
+		<event>
+			<string key="concept:name" value="ProcessResultandNotify-End"/>
+			<string key="StepPhaseID" value="1"/>
+			<date key="time:timestamp" value="2024-07-08T14:37:47.785871+01:00"/>
+			<string key="PipelineID" value="1"/>
+			<string key="PipelineCommunicationMedium" value="mediumWEB_SERVICE
+	"/>
+			<string key="PipelineName" value="telluUseCase"/>
+			<string key="StepID" value="4"/>
+			<string key="StepName" value="ProcessResultandNotify"/>
+		</event>
+		<event>
+			<string key="concept:name" value="StoreDetails-End"/>
+			<string key="StepPhaseID" value="1"/>
+			<date key="time:timestamp" value="2024-07-08T14:37:47.785881+01:00"/>
+			<string key="PipelineID" value="1"/>
+			<string key="PipelineCommunicationMedium" value="mediumWEB_SERVICE
+	"/>
+			<string key="PipelineName" value="telluUseCase"/>
+			<string key="StepID" value="5"/>
+			<string key="StepName" value="StoreDetails"/>
+		</event>
+	</trace>
+</log>
