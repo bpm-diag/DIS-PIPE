@@ -29,7 +29,7 @@ The DIS-PIPE components include:
 
 
 ## Demo
-A screen-cast showing the tool in action is available at: [https://youtu.be/islqk1U8g9I](https://youtu.be/islqk1U8g9I)
+A screen-cast showing the tool in action is available at: [https://www.youtube.com/watch?v=AkB_qDId2xk](https://www.youtube.com/watch?v=AkB_qDId2xk)
 
 ## Requirements
 To use the tool, you need to have installed docker on your machine.
