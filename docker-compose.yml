@@ -4,7 +4,7 @@ services:
   dis-pipe:
     platform: linux/amd64
     container_name: dis-pipe
-    image: registry.gitlab.com/jacoporossi/dis-pipe_icpm:1.0.0
+    image: registry.gitlab.com/jacoporossi/icpm_demo_track_dis-pipe:1.0.0
     ports:
       - "7778:7778"
     environment:
