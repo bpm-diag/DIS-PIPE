@@ -1,0 +1,70 @@
+Pipeline output {
+	communicationMedium: medium WEB_SERVICE
+	steps:
+
+
+		- data-processing step Request
+			implementation: container-implementation image: ''
+			environmentParameters: {
+				Frequency: '',
+				Duration: '17s'
+			}
+			resourceProvider: Accesspoint
+			executionRequirement:
+				hardRequirements:
+
+
+		- data-processing step Query
+			implementation: container-implementation image: ''
+			environmentParameters: {
+				Frequency: '32',
+				Duration: '20s'
+			}
+			resourceProvider: Accesspoint
+			executionRequirement:
+				hardRequirements:
+
+
+		- data-processing step Transformation
+			implementation: container-implementation image: ''
+			environmentParameters: {
+				Frequency: '49',
+				Duration: '10s'
+			}
+			resourceProvider: Accesspoint
+			executionRequirement:
+				hardRequirements:
+
+
+		- data-processing step Data_Merge
+			implementation: container-implementation image: ''
+			environmentParameters: {
+				Frequency: '29',
+				Duration: '49s'
+			}
+			resourceProvider: Accesspoint
+			executionRequirement:
+				hardRequirements:
+
+
+		- data-processing step Visualization
+			implementation: container-implementation image: ''
+			environmentParameters: {
+				Frequency: '29',
+				Duration: '29s'
+			}
+			resourceProvider: Accesspoint
+			executionRequirement:
+				hardRequirements:
+
+
+		- data-processing step Report_Generated
+			implementation: container-implementation image: ''
+			environmentParameters: {
+				Frequency: '32',
+				Duration: '32s'
+			}
+			resourceProvider: Accesspoint
+			executionRequirement:
+				hardRequirements:
+}
